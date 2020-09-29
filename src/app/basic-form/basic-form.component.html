@@ -1,0 +1,47 @@
+<form class="basic-form" [formGroup]='basicForm'>
+    <label class="basic-form__label" for="firstName">First Name:</label>
+    <input class="basic-form__input" id="firstName" placeholder="First Name" type="text" formControlName='firstName'>
+    <p class="basic-form__error" *ngIf="firstName.errors?.pattern">
+        Only English Lexicon Alphabets allowed, No numbers/Signs allowed.
+    </p>
+    <p class="basic-form__error" *ngIf="firstName.errors?.required && firstName.touched">
+        This field is required
+    </p>
+    <label class="basic-form__label" for="lastName">Last Name:</label>
+    <input id="lastName" class="basic-form__input" placeholder="Last Name" type="text" formControlName='lastName'>
+    <p class="basic-form__error" *ngIf="lastName.errors?.pattern">
+        Only English Lexicon Alphabets allowed, No numbers/Signs allowed.
+    </p>
+    <p class="basic-form__error" *ngIf="lastName.errors?.required && lastName.touched">
+        This field is required
+    </p>
+    <label class="basic-form__label" for="email">Email:</label>
+    <input id="email" class="basic-form__input" placeholder="Email Address" type="email" formControlName='email'>
+    <p class="basic-form__error" *ngIf="email.errors?.email">
+        Invalid email address provided.
+    </p>
+    <p class="basic-form__error" *ngIf="email.errors?.required && email.touched">
+        This field is required
+    </p>
+    <label class="basic-form__label" for="password">Password:</label>
+    <input id="password" class="basic-form__input" placeholder="Password" type="password" formControlName='password'>
+    <p class="basic-form__error" *ngIf="password.errors?.minlength">
+        Password should contain at least 6 characters
+    </p>
+    <p class="basic-form__error" *ngIf="password.errors?.required && password.touched">
+        This field is required
+    </p>
+    <label class="basic-form__label" for="confirmPassword">Confirm Password:</label>
+    <input id="confirmPassword" class="basic-form__input" placeholder="Confirm Password" type="password" formControlName='confirmPassword'>
+    <p class="basic-form__error" *ngIf="confirmPassword.errors?.minlength">
+        Password should contain at least 6 characters
+    </p>
+    <p class="basic-form__error" *ngIf="confirmPassword.errors?.notSamePassword">
+        Confirm password is different.
+    </p>
+    <p class="basic-form__error" *ngIf="confirmPassword.errors?.required && confirmPassword.touched">
+        This field is required
+    </p>
+
+    <input class="basic-form__input" type="submit" [disabled]="basicForm.invalid">
+</form>

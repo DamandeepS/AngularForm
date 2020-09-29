@@ -1,0 +1,28 @@
+.basic-form {
+    display: block;
+    margin: 20px;
+
+    &__input {
+        display: block;
+        margin: 10px 0 0 ;
+        padding: 10px;
+        border: 1px solid #ccc;
+
+        &.ng-invalid:not(.ng-untouched) {
+            border-color: rgb(236, 109, 109);
+        }
+    }
+
+    &__error {
+        font-size: 0.8em;
+        margin: 5px 5px 0 0;
+        display: block;
+        padding: 0;
+    }
+
+    &__label {
+        display: block;
+        margin: 10px 0 0;
+        font-weight: 600;
+    }
+}
