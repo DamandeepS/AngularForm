@@ -19,11 +19,11 @@ export class BasicFormComponent implements OnInit {
     this.basicForm = this.formBuilder.group({
       firstName: ['', [
         Validators.required,
-        Validators.pattern(/^[A-Za-z ]+$/)
+        Validators.pattern(/^[A-Za-z]+$/)
       ]],
       lastName: ['', [
         Validators.required,
-        Validators.pattern(/^[A-Za-z ]+$/)
+        Validators.pattern(/^[A-Za-z]+$/)
       ]],
       email: ['', [
         Validators.required,
